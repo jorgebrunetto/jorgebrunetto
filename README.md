@@ -8,7 +8,7 @@
 [![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=flat-square&logo=codepen&logoColor=white&link=https://codepen.io/jorgebrunetto)](https://codepen.io/jorgebrunetto)
 [![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=flat-square&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunettot@hotmail.com)
 
-    Com 32 anos de idade, apaixonado por informática comecei minha carreira em meados de 2000,
+    Com 33 anos de idade, apaixonado por informática comecei minha carreira em meados de 2000,
     já atuei como professor, desenvolvedor backend, frontend e designer. Inicialmente me interessei pela
     área de hardware e comecei a trabalhar como suporte (help-desk).
 
