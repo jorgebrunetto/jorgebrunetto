@@ -49,8 +49,8 @@
 ![Nodejs](https://img.shields.io/badge/-Nodejs-000?style=for-the-badge&logo=Node.js&logoColor=339933)
 ![Nextjs](https://img.shields.io/badge/-Nextjs-000?style=for-the-badge&logo=Next.js)
 ![Docker](https://img.shields.io/badge/-Docker-000?style=for-the-badge&logo=docker)
-![GraphQL](https://img.shields.io/badge/-GraphQL-000?style=for-the-badge&logo=graphql)
-![MongoDB](https://img.shields.io/badge/-MongoDB-000?style=for-the-badge&logo=mongodb)
+![GraphQL](https://img.shields.io/badge/-GraphQL-000?style=for-the-badge&logo=graphql&logoColor=E10098)
+![MongoDB](https://img.shields.io/badge/-MongoDB-000?style=for-the-badge&logo=mongodb&logoColor=47A248)
 ![Firebase](https://img.shields.io/badge/-Firebase-000?style=for-the-badge&logo=firebase)
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-000?style=for-the-badge&logo=postgresql)
 ![MySQL](https://img.shields.io/badge/-MySQL-000?style=for-the-badge&logo=mysql)
@@ -61,4 +61,8 @@
 
 ![Heroku](https://img.shields.io/badge/-Heroku-000?style=for-the-badge&logo=heroku)
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-000?style=for-the-badge&logo=google-cloud)
-![Amazon AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws)
+![AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws&logoColor=FF9900)
+
+## 📖 Aprendendo / Currently learning 📖
+
+![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
