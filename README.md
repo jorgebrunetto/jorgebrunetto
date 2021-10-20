@@ -1,4 +1,4 @@
-### 👨🏻‍💻 Um pouco sobre mim / About me 👨🏻‍💻
+### Um pouco sobre mim / About me 👨🏻‍💻
 
 
 [![Site Badge](https://img.shields.io/badge/-Site-000000?style=for-the-badge&logo=react&logoColor=white&link=https://jorgebrunetto.com.br)](https://www.linkedin.com/in/jorgebrunetto/)
@@ -18,7 +18,7 @@
 
     Confira meu CV e conheça um pouco mais sobre mim.
 
-## 📚 Conhecimentos / Knowledges 📚
+## Conhecimentos / Knowledges 📚
 
 ![HTML5](https://img.shields.io/badge/-HTML5-000?style=for-the-badge&logo=html5&logoColor=E34F26)
 ![Vuetify](https://img.shields.io/badge/-Vuetify-000?style=for-the-badge&logo=vuetify&logoColor=1867C0)
@@ -63,6 +63,6 @@
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-000?style=for-the-badge&logo=google-cloud)
 ![AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws&logoColor=FF9900)
 
-## 📖 Aprendendo / Currently learning 📖
+## Aprendendo / Currently learning 📖
 
 ![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
