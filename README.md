@@ -20,13 +20,14 @@
 
 ## Conhecimentos / Knowledges
 
-[![HTML5](https://img.shields.io/badge/-HTML5-000?style=for-the-badge&logo=html5&logoColor=white&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
+![HTML5](https://img.shields.io/badge/-HTML5-000?style=for-the-badge&logo=html5&logoColor=E34F26)
+
 [![Bootstrap](https://img.shields.io/badge/-Bootstrap-000?style=for-the-badge&logo=bootstrap&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
 [![Vuetify](https://img.shields.io/badge/-Vuetify-000?style=for-the-badge&logo=vuetify&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
 [![ZurbFoundation](https://img.shields.io/badge/-Zurb%20Foundation-000?style=for-the-badge&logo=favro&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
 [![MaterialUI](https://img.shields.io/badge/-MaterialUI-000?style=for-the-badge&logo=material-ui&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
 
-[![CSS3](https://img.shields.io/badge/-CSS3-000?style=for-the-badge&logo=css3&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
+![CSS3](https://img.shields.io/badge/-CSS3-000?style=for-the-badge&logo=css3&logoColor=1572B6)
 [![Sass](https://img.shields.io/badge/-Sass-000?style=for-the-badge&logo=sass&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
 [![Less](https://img.shields.io/badge/-Less-000?style=for-the-badge&logo=sass&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
 [![Stylus](https://img.shields.io/badge/-Stylus-000?style=for-the-badge&logo=stylus&link=https://github.com/jorgebrunetto/)](https://github.com/jorgebrunetto/)
