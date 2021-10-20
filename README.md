@@ -1,7 +1,7 @@
 ### Um pouco sobre mim / About me 👋
 
 
-[![Site Badge](https://img.shields.io/badge/-Site-000000?style=for-the-badge&logo=react&logoColor=white&link=https://jorgebrunetto.com.br)](https://jorgebrunetto.com.br)
+[![Site Badge](https://img.shields.io/badge/-Site-000000?style=for-the-badge&logo=react&logoColor=white&link=https://jorgebrunetto.com.br)]
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jorgebrunetto/)](https://www.linkedin.com/in/jorgebrunetto/)
 [![Whatsapp Badge](https://img.shields.io/badge/-Whatsapp-4CA143?style=for-the-badge&labelColor=4CA143&logo=whatsapp&logoColor=white&link=https://api.whatsapp.com/send?phone=5515981376495&text=Olá!)](https://api.whatsapp.com/send?phone=5515981376495&text=Olá!)
 [![Telegram Badge](https://img.shields.io/badge/-Telegram-1ca0f1?style=for-the-badge&labelColor=1ca0f1&logo=telegram&logoColor=white&link=https://t.me/jorgebrunetto)](https://t.me/jorgebrunetto)
