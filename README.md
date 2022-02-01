@@ -66,3 +66,6 @@
 ### 📖 - Aprendendo / Currently learning
 
 ![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
+
+---
+![](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
