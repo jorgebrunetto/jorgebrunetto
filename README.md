@@ -8,6 +8,12 @@
 [![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white&link=https://codepen.io/jorgebrunetto)](https://codepen.io/jorgebrunetto)
 [![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunettot@hotmail.com)
 
+ <a href="https://github.com/henriquelbsouza">
+    <img height="130em" src="https://github-readme-stats.vercel.app/api?username=jorgebrunetto&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+    <img height="130em" src="https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=dark&hide_border=true"/>
+  </a>
+
+
     Com 33 anos de idade, apaixonado por informática comecei minha carreira em meados de 2000,
     já atuei como professor, desenvolvedor backend, frontend e designer. Inicialmente me interessei pela
     área de hardware e comecei a trabalhar como suporte (help-desk).
