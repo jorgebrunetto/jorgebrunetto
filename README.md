@@ -8,21 +8,25 @@
 [![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white&link=https://codepen.io/jorgebrunetto)](https://codepen.io/jorgebrunetto)
 [![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunettot@hotmail.com)
 
- <a href="https://github.com/henriquelbsouza">
-    <img height="150em" src="https://github-readme-stats.vercel.app/api?username=jorgebrunetto&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-    <img height="150em" src="https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=dark&hide_border=true"/>
-  </a>
+<a href="https://github.com/henriquelbsouza">
+  <img height="150em" src="https://github-readme-stats.vercel.app/api?username=jorgebrunetto&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+  <img height="150em" src="https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=dark&hide_border=true"/>
+</a>
 
+```
+Com alguns anos de bugs, hotfixes e muito café continuo apaixonado por
+desenvolvimento.
+Iniciei minha carreira em meados de 2000, já atuei como professor, backend,
+frontend, devops, DBA e UX/UI, então já dei uma varrida boa na nossa área.
 
-    Com 33 anos de idade, apaixonado por informática comecei minha carreira em meados de 2000,
-    já atuei como professor, desenvolvedor backend, frontend e designer. Inicialmente me interessei pela
-    área de hardware e comecei a trabalhar como suporte (help-desk).
+Inicialmente me interessei pela área de hardware e comecei a trabalhar como suporte (help-desk).
 
-    Em alguns anos mudei minha àrea de atuação para desenvolvimento me aprofundando em algumas linguagens,
-    como me identifiquei muito com desenvolvimento e front-end hoje atuo como desenvolvedor
-    multi-plataforma, desktop, mobile, web e continuo ministrando aulas.
+Em alguns anos mudei minha àrea de atuação para desenvolvimento me aprofundando em algumas linguagens,
+como me identifiquei muito com desenvolvimento e front-end hoje atuo como desenvolvedor
+multi-plataforma, desktop, mobile, web e continuo ministrando aulas.
 
-    Confira meu CV e conheça um pouco mais sobre mim.
+Confira meu CV e conheça um pouco mais sobre mim.
+```
 
 ### 📚 - Conhecimentos / Knowledges
 
