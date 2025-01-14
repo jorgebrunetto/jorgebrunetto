@@ -5,12 +5,15 @@
 [![Whatsapp Badge](https://img.shields.io/badge/-Whatsapp-4CA143?style=for-the-badge&labelColor=4CA143&logo=whatsapp&logoColor=white&link=https://api.whatsapp.com/send?phone=5515981376495&text=Olá!)](https://api.whatsapp.com/send?phone=5515981376495&text=Olá!)
 [![Telegram Badge](https://img.shields.io/badge/-Telegram-1ca0f1?style=for-the-badge&labelColor=1ca0f1&logo=telegram&logoColor=white&link=https://t.me/jorgebrunetto)](https://t.me/jorgebrunetto)
 [![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white&link=https://codepen.io/jorgebrunetto)](https://codepen.io/jorgebrunetto)
-[![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunettot@hotmail.com)
+[![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunetto@hotmail.com)
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jorgebrunetto&show_icons=true&theme=dark&include_all_commits=true&count_private=true)](https://github.com/jorgebrunetto)
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=dark&hide_border=true)](https://github.com/jorgebrunetto)
+![jorgebrunetto's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&layout=compact)
 
-```
+![jorgebrunetto's Stats](https://github-readme-stats.vercel.app/api?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&count_private=true)
+
+![jorgebrunetto's Streak](https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=merko&hide_border=true)
+
+```markdown
 Com alguns anos de bugs, hotfixes e muito café continuo apaixonado por
 desenvolvimento.
 Iniciei minha carreira em meados de 2000, já atuei como professor, backend,
@@ -37,14 +40,14 @@ Confira meu CV e conheça um pouco mais sobre mim.
 ![Sass](https://img.shields.io/badge/-Sass-000?style=for-the-badge&logo=sass)
 ![Less](https://img.shields.io/badge/-Less-000?style=for-the-badge&logo=sass)
 ![Stylus](https://img.shields.io/badge/-Stylus-000?style=for-the-badge&logo=stylus)
-![StyledComponents](https://img.shields.io/badge/-Stylus-000?style=for-the-badge&logo=styledcomponents)
+![StyledComponents](https://img.shields.io/badge/-StyledComponents-000?style=for-the-badge&logo=styled-components)
 
 ![Font Awesome](https://img.shields.io/badge/-Font%20Awesome-000?style=for-the-badge&logo=font-awesome&logoColor=339AF0)
 ![Iconify](https://img.shields.io/badge/-Iconify-000?style=for-the-badge&logo=iconify)
 ![MaterialDesignIcons](https://img.shields.io/badge/-Material%20Design%20Icons-000?style=for-the-badge&logo=material-design-icons&logoColor=2196F3)
 
 ![React](https://img.shields.io/badge/-React-000?style=for-the-badge&logo=react)
-![Vue.js](https://img.shields.io/badge/-Vuejs-000?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
+![Vue.js](https://img.shields.io/badge/-Vue.js-000?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-000?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![jQuery](https://img.shields.io/badge/-jQuery-000?style=for-the-badge&logo=jquery&logoColor=0769AD)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript&logoColor=3178C6)
@@ -67,7 +70,7 @@ Confira meu CV e conheça um pouco mais sobre mim.
 ![GitHub](https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github)
 
 ![Heroku](https://img.shields.io/badge/-Heroku-000?style=for-the-badge&logo=heroku)
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-000?style=for-the-badge&logo=google-cloud)
+![Google Cloud Platform](https://img.shields.io/badge/Google%20Cloud%20Platform-000?style=for-the-badge&logo=google-cloud)
 ![AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws&logoColor=FF9900)
 
 ## 📖 - Aprendendo / Currently learning
@@ -75,4 +78,4 @@ Confira meu CV e conheça um pouco mais sobre mim.
 ![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
 
 ---
-![](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+![GitHub Contribution Grid Snake](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
