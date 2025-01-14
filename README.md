@@ -1,5 +1,4 @@
-### 👨🏻‍💻 - Um pouco sobre mim / About me
-
+# 👨🏻‍💻 - Um pouco sobre mim / About me
 
 [![Site Badge](https://img.shields.io/badge/-Site-000000?style=for-the-badge&logo=react&logoColor=white&link=https://jorgebrunetto.com.br)](https://www.linkedin.com/in/jorgebrunetto/)
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jorgebrunetto/)](https://www.linkedin.com/in/jorgebrunetto/)
@@ -8,10 +7,8 @@
 [![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white&link=https://codepen.io/jorgebrunetto)](https://codepen.io/jorgebrunetto)
 [![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunettot@hotmail.com)
 
-<a href="https://github.com/jorgebrunetto">
-  <img height="150em" src="https://github-readme-stats.vercel.app/api?username=jorgebrunetto&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-  <img height="150em" src="https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=dark&hide_border=true"/>
-</a>
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jorgebrunetto&show_icons=true&theme=dark&include_all_commits=true&count_private=true)](https://github.com/jorgebrunetto)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=dark&hide_border=true)](https://github.com/jorgebrunetto)
 
 ```
 Com alguns anos de bugs, hotfixes e muito café continuo apaixonado por
@@ -28,7 +25,7 @@ multi-plataforma, desktop, mobile, web e continuo ministrando aulas.
 Confira meu CV e conheça um pouco mais sobre mim.
 ```
 
-### 📚 - Conhecimentos / Knowledges
+## 📚 - Conhecimentos / Knowledges
 
 ![HTML5](https://img.shields.io/badge/-HTML5-000?style=for-the-badge&logo=html5&logoColor=E34F26)
 ![Vuetify](https://img.shields.io/badge/-Vuetify-000?style=for-the-badge&logo=vuetify&logoColor=1867C0)
@@ -73,7 +70,7 @@ Confira meu CV e conheça um pouco mais sobre mim.
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-000?style=for-the-badge&logo=google-cloud)
 ![AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws&logoColor=FF9900)
 
-### 📖 - Aprendendo / Currently learning
+## 📖 - Aprendendo / Currently learning
 
 ![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
 
