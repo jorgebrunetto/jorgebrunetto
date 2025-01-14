@@ -73,8 +73,6 @@ Confira meu CV e conheça um pouco mais sobre mim.
 
 ![jorgebrunetto's Stats](https://github-readme-stats.vercel.app/api?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&count_private=true)
 
-![jorgebrunetto's Streak](https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=merko&hide_border=true)
-
 ## 📖 - Aprendendo / Currently learning
 
 ![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
