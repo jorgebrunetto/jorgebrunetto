@@ -7,12 +7,6 @@
 [![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white&link=https://codepen.io/jorgebrunetto)](https://codepen.io/jorgebrunetto)
 [![Hotmail Badge](https://img.shields.io/badge/-Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white&link=mailto:jorgebrunetto@hotmail.com)](mailto:jorgebrunetto@hotmail.com)
 
-![jorgebrunetto's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&layout=compact)
-
-![jorgebrunetto's Stats](https://github-readme-stats.vercel.app/api?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&count_private=true)
-
-![jorgebrunetto's Streak](https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=merko&hide_border=true)
-
 ```markdown
 Com alguns anos de bugs, hotfixes e muito café continuo apaixonado por
 desenvolvimento.
@@ -71,7 +65,15 @@ Confira meu CV e conheça um pouco mais sobre mim.
 
 ![Heroku](https://img.shields.io/badge/-Heroku-000?style=for-the-badge&logo=heroku)
 ![Google Cloud Platform](https://img.shields.io/badge/Google%20Cloud%20Platform-000?style=for-the-badge&logo=google-cloud)
-![AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws&logoColor=FF9900)
+![AWS](https://img.shields.io/badge/Amazon%20AWS-000?style=for-the-badge&logo=amazon-aws&logoColor=FF9900)]
+
+## 😍 -  Meu Git Stats
+
+![jorgebrunetto's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&layout=compact)
+
+![jorgebrunetto's Stats](https://github-readme-stats.vercel.app/api?username=jorgebrunetto&theme=merko&show_icons=true&hide_border=true&count_private=true)
+
+![jorgebrunetto's Streak](https://github-readme-streak-stats.herokuapp.com/?user=jorgebrunetto&theme=merko&hide_border=true)
 
 ## 📖 - Aprendendo / Currently learning
 
