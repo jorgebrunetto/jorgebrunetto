@@ -30,11 +30,7 @@ export default function LanguageToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="fixed right-12 top-2 z-10 uppercase"
-        >
+        <Button variant="outline" size="icon" className="uppercase">
           {languages.find(lang => lang.code === language)?.code || "EN"}
           <span className="sr-only">Toggle language</span>
         </Button>

@@ -11,7 +11,7 @@ export const TitleBar = () => {
   }, []);
 
   return (
-    <div className="flex flex-col mt-auto border-t py-10 px-5 border-background">
+    <div className="flex-col mt-auto border-t py-10 px-5 border-background hidden md:flex">
       <p className="font-semibold text-2xl text-muted-foreground">
         <span className="underline text-3xl">F</span>
         {hydrated && (

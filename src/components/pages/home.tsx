@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatedText } from "../animated-text";
 import { useLanguage } from "../language-provider";
 import { SocialBar } from "../social-bar";
@@ -36,20 +37,32 @@ const Hero = () => {
 
       <SocialBar />
 
-      <a
-        className="hover:animate-jump"
-        href={
-          theme === "light"
-            ? "/curriculum-jorgebrunetto-l.pdf"
-            : "/curriculum-jorgebrunetto-d.pdf"
-        }
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <Button className="mt-4" variant="download" size="lg">
-          Download CV
-        </Button>
-      </a>
+      <div className="flex gap-2">
+        <Link
+          className="hover:animate-jump"
+          href="https://wa.me/5515981376495?text=Conheci%20seu%20trabalho%20no%20site"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Button className="mt-4" variant="download" size="lg">
+            Whatsapp
+          </Button>
+        </Link>
+        <Link
+          className="hover:animate-jump"
+          href={
+            theme === "light"
+              ? "/curriculum-jorgebrunetto-l.pdf"
+              : "/curriculum-jorgebrunetto-d.pdf"
+          }
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Button className="mt-4" variant="download" size="lg">
+            Download CV
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };

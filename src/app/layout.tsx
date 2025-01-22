@@ -65,9 +65,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <main className="flex flex-col min-h-screen">
-              <ModeToggle />
-              <LanguageToggle />
+            <main className="flex flex-col min-h-screen pb-20 md:pb-0">
+              <section className="fixed right-2 top-2 z-50 flex space-x-1">
+                <ModeToggle />
+                <LanguageToggle />
+              </section>
+
               <SideBar />
               <ScrollToTop />
 
