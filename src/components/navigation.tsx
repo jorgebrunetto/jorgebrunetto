@@ -29,7 +29,7 @@ export const Navigation = () => {
   }, []);
 
   const getMenuItemClass = (section: string) => {
-    return activeSection === section ? "bg-background" : "";
+    return activeSection === section ? "bg-background dark:bg-slate-900" : "";
   };
 
   return (
@@ -39,7 +39,7 @@ export const Navigation = () => {
           key={item.name}
           href={item.href}
           className={cn(
-            "hover:animate-shake rounded-3xl font-semibold flex items-center justify-start p-3 md:p-6 hover:bg-background dark:hover:bg-background transition-colors gap-x-4",
+            "hover:animate-shake rounded-3xl font-semibold flex items-center justify-start p-3 md:p-6 hover:bg-background dark:hover:bg-slate-900 transition-colors gap-x-4",
             getMenuItemClass(item.name)
           )}
           onClick={() => setActiveSection(item.name)}

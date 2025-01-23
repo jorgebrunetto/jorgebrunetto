@@ -15,7 +15,7 @@ export const SideBar = () => {
       const currentScrollY = window.scrollY;
 
       // Se scrollou para baixo mais de 50px
-      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      if (currentScrollY > lastScrollY && currentScrollY > 120) {
         setIsVisible(false);
       }
       // Se scrollou para cima mais de 50px
@@ -37,7 +37,7 @@ export const SideBar = () => {
         isVisible ? "translate-y-0" : "translate-y-full"
       )}
     >
-      <section className="rounded-xl lg:flex flex-col bg-slate-200 dark:bg-black text-black dark:text-gray-100 h-full">
+      <section className="rounded-xl lg:flex flex-col bg-slate-300 dark:bg-black text-black dark:text-gray-100 h-full">
         <ContactBar />
         <Navigation />
         <TitleBar />
