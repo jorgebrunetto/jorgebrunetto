@@ -29,7 +29,7 @@ export const Navigation = () => {
   }, []);
 
   const getMenuItemClass = (section: string) => {
-    return activeSection === section ? "bg-background dark:bg-slate-900" : "";
+    return activeSection === section ? "bg-background dark:bg-slate-800" : "";
   };
 
   return (
