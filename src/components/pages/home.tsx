@@ -1,5 +1,6 @@
 "use client";
 
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,16 +12,17 @@ import { Button } from "../ui/button";
 const Hero = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
 
   return (
     <div
       id="home"
-      className="px-4 md:pl-80 min-h-screen w-full flex flex-col items-center text-center gap-4 justify-center"
+      className="px-4 md:pl-80 min-h-screen w-full flex flex-col items-center text-center gap-5 justify-center"
     >
       <Image
         src="/images/home/perfil.jpg"
-        height={300}
-        width={300}
+        height={isMobile ? 200 : 300}
+        width={isMobile ? 200 : 300}
         alt="Minha imagem de perfil"
         className="rounded-tl-[60%] rounded-tr-[70%] rounded-bl-[70%] rounded-br-[60%]"
       />

@@ -66,13 +66,13 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <main className="flex flex-col min-h-screen pb-20 md:pb-0">
-              <section className="fixed right-2 top-2 z-50 flex space-x-1">
+              <section className="fixed right-2 top-2 z-40 flex space-x-1">
                 <ModeToggle />
                 <LanguageToggle />
+                <ScrollToTop />
               </section>
 
               <SideBar />
-              <ScrollToTop />
 
               {children}
             </main>
