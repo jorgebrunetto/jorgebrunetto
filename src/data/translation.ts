@@ -23,6 +23,7 @@ export const translations: Translations = {
         portTechUsages: "Tecnologias utilizadas",
         accessSite: "Acessar site",
         showMore: "Mostrar mais",
+        clearSelection: "Limpar filtro",
     },
     en: {
         home: "Home",
@@ -44,6 +45,7 @@ export const translations: Translations = {
         portTechUsages: "Technologies Used",
         accessSite: "Jump to site",
         showMore: "Show more",
+        clearSelection: "Clear filter",
     },
     es: {
         home: "Inicio",
@@ -65,5 +67,6 @@ export const translations: Translations = {
         portTechUsages: "Tecnologías utilizadas",
         accessSite: "Acceder al sitio",
         showMore: "Mostrar más",
+        clearSelection: "Limpiar filtro",
     },
 } as const;

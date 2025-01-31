@@ -1,10 +1,6 @@
 import Image from "next/image";
 
 export const ContactBar = () => {
-  const contactInfo = {
-    email: "jorgebrunetto@hotmail.com",
-  };
-
   return (
     <div className="hidden md:flex flex-col border-b p-5 border-background">
       <div className="flex space-x-4 items-center">
