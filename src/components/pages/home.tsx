@@ -1,31 +1,26 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { AnimatedText } from "../animated-text";
+import { ImageProfile } from "../image-profile";
 import { useLanguage } from "../language-provider";
+import { Particle } from "../particle";
 import { SocialBar } from "../social-bar";
 import { Button } from "../ui/button";
 
 const Hero = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const isMobile = useIsMobile();
 
   return (
     <div
       id="home"
       className="px-4 md:pl-80 min-h-screen w-full flex flex-col items-center text-center gap-5 justify-center"
     >
-      <Image
-        src="/images/home/perfil.jpg"
-        height={isMobile ? 200 : 300}
-        width={isMobile ? 200 : 300}
-        alt="Minha imagem de perfil"
-        className="rounded-tl-[60%] rounded-tr-[70%] rounded-bl-[70%] rounded-br-[60%]"
-      />
+      <Particle />
+      <ImageProfile />
+      {/* <div className="absolute z-0 inset-0 bg-gradient-to-br dark:from-indigo-500/[0.05] via-transparent dark:to-green-500/[0.05] blur-3xl" /> */}
 
       <h5 className="font-semibold text-xl text-gray-500 dark:text-white">
         {t("welcomeMessage")}
@@ -39,7 +34,7 @@ const Hero = () => {
 
       <SocialBar />
 
-      <div className="flex gap-2">
+      <div className="flex gap-2 z-10">
         <Link
           className="hover:animate-jump"
           href="https://wa.me/5515981376495?text=Conheci%20seu%20trabalho%20no%20site"
