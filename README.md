@@ -78,5 +78,4 @@ Confira meu CV e conheça um pouco mais sobre mim.
 ![English](https://img.shields.io/badge/English-000?style=for-the-badge&logo=bookstack)
 
 ---
-![GitHub Contribution Grid Snake](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
-![GitHub Contribution Grid Snake](https://github.com/user-attachments/assets/e00949be-b88e-4c2a-85db-8bfc2f9bbe70)
+![GitHub Contribution Grid Snake JorgeBrunetto](https://github.com/user-attachments/assets/e00949be-b88e-4c2a-85db-8bfc2f9bbe70)
