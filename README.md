@@ -79,3 +79,4 @@ Confira meu CV e conheça um pouco mais sobre mim.
 
 ---
 ![GitHub Contribution Grid Snake](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+![GitHub Contribution Grid Snake](https://github.com/user-attachments/assets/e00949be-b88e-4c2a-85db-8bfc2f9bbe70)
