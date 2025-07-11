@@ -69,6 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <head>
+        <meta property="og:logo" content="https://jorgebrunetto.com.br/share-jorgebrunetto.png" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
