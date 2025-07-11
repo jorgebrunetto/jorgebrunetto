@@ -22,13 +22,13 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "Jorge Brunetto || Personal Portfolio",
   description:
-    "Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral.",
+    "Desenvolvedor sênior especializado em React, Next.js e TypeScript. Criação de aplicações escaláveis, SSR/SSG, API integration e arquitetura front-end moderna.",
   keywords:
-    "Jorge Brunetto, desenvolvedor frontend, especialista React, especialista Nextjs, React Native expert, Tech Lead Front-end, desenvolvedor TypeScript, frontend freelancer, criação de aplicativos web e mobile, UI UX expert, consultoria front-end, desenvolvedor SPAs, frontend performance, profissional frontend sênior",
+    "Jorge Brunetto, desenvolvedor front-end, React, Next.js, TypeScript, especialista React, aplicações web, front-end performance, SSR, SSG, frontend freelancer, arquitetura front-end, Tech Lead Front-end, desenvolvimento web escalável",
   openGraph: {
     title: "Jorge Brunetto - criação e desenvolvimento",
     description:
-      "Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral.",
+      "Desenvolvedor sênior especializado em React, Next.js e TypeScript. Criação de aplicações escaláveis, SSR/SSG, API integration e arquitetura front-end moderna.",
     url: "https://jorgebrunetto.com.br",
     siteName: "jorgebrunetto",
     locale: "pt_BR",
@@ -98,7 +98,7 @@ export default function RootLayout({
           gtag('config', 'G-XH15NPKBG0');
         `}
         </Script>
-        
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
