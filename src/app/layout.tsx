@@ -11,6 +11,7 @@ import LanguageToggle from "@/components/language-toggle";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SideBar } from "@/components/side-bar";
 import { ModeToggle } from "@/components/toggle-mode";
+import Head from "next/head";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -69,9 +70,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <head>
-        <meta property="og:logo" content="https://jorgebrunetto.com.br/share-jorgebrunetto.png" />
-      </head>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://jorgebrunetto.com.br"
+          key="canonical"
+        />
+        <meta
+          property="og:logo"
+          content="https://jorgebrunetto.com.br/share-jorgebrunetto.png"
+        />
+      </Head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",

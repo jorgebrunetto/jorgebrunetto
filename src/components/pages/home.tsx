@@ -22,15 +22,15 @@ const Hero = () => {
       <ImageProfile />
       {/* <div className="absolute z-0 inset-0 bg-gradient-to-br dark:from-indigo-500/[0.05] via-transparent dark:to-green-500/[0.05] blur-3xl" /> */}
 
-      <h5 className="font-semibold text-xl text-gray-500 dark:text-white">
+      <h1 className="font-semibold text-xl text-gray-500 dark:text-white">
         {t("welcomeMessage")}
-      </h5>
+      </h1>
 
       <AnimatedText />
 
-      <h5 className="font-medium text-base text-gray-500 dark:text-gray-400 w-full max-w-md">
+      <h2 className="font-medium text-base text-gray-500 dark:text-gray-400 w-full max-w-md">
         {t("smallIntro")}
-      </h5>
+      </h2>
 
       <SocialBar />
 

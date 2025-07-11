@@ -61,9 +61,9 @@ const About = () => {
         <div className="flex flex-col gap-6 text-center">
           <h3 className="font-normal text-xl">{t("welcomeMessage")}</h3>
 
-          <h5 className="font-medium text-lg mx-auto text-gray-500 dark:text-gray-400 w-full max-w-3xl">
+          <h4 className="font-medium text-lg mx-auto text-gray-500 dark:text-gray-400 w-full max-w-3xl">
             {t("introText")}
-          </h5>
+          </h4>
         </div>
         <div>
           <h3 className="font-bold text-xl mb-3 text-center">
