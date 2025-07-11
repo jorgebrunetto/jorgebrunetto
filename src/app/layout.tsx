@@ -88,8 +88,9 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://jorgebrunetto.com.br/share-jorgebrunetto.png"
+          content="https://jorgebrunetto.com.br/share-jorgebrunetto.webp"
         />
+        <meta property="og:image:type" content="image/webp" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="jorgebrunetto.com.br" />
@@ -104,7 +105,11 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="https://jorgebrunetto.com.br/share-jorgebrunetto.png"
+          content="https://jorgebrunetto.com.br/share-jorgebrunetto.webp"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="Jorge Brunetto - criação e desenvolvimento"
         />
       </head>
 
