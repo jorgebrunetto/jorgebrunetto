@@ -7,42 +7,47 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useLanguage } from "./language-provider";
-
 import { Language } from "@/lib/types";
-import { Icon, IconProps } from "./icon";
+import { IconType } from "react-icons";
+import {
+  GiBrazil,
+  GiEarthAmerica,
+  GiSpain
+} from "react-icons/gi";
+import { TbLanguage } from "react-icons/tb";
+import { useLanguage } from "./language-provider";
 
 interface ILanguage {
   code: Language;
   label: string;
-  icon: IconProps["name"];
+  icon: IconType;
 }
 
 export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
   const languages: ILanguage[] = [
-    { code: "pt", label: "Português", icon: "GiBrazil" },
-    { code: "en", label: "English", icon: "GiEarthAmerica" },
-    { code: "es", label: "Español", icon: "GiSpain" },
+    { code: "pt", label: "Português", icon: GiBrazil },
+    { code: "en", label: "English", icon: GiEarthAmerica },
+    { code: "es", label: "Español", icon: GiSpain },
   ];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="uppercase">
-          {languages.find(lang => lang.code === language)?.code || "EN"}
+          <TbLanguage />
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {languages.map(({ code, label, icon }) => (
+        {languages.map(({ code, label, icon: Icon }) => (
           <DropdownMenuItem
             key={code}
             onClick={() => setLanguage(code)}
-            className={language === code ? "font-bold" : "cursor-pointer"}
+            className={language === code ? "font-bold bg-foreground/10" : "cursor-pointer"}
           >
-            <Icon name={icon} /> {label}
+            <Icon /> {label}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

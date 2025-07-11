@@ -3,8 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { contentSkills } from "@/data/about";
 import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 import { useState } from "react";
-import { Icon } from "../icon";
 import { useLanguage } from "../language-provider";
 import { TitlePage } from "../title-page";
 import { Button } from "../ui/button";
@@ -15,13 +15,13 @@ const About = () => {
   const { t } = useLanguage();
 
   const categories = Array.from(
-    new Set(contentSkills.map(skill => skill.category))
+    new Set(contentSkills.map((skill) => skill.category))
   );
   const showMoreCards = () => {
-    setVisibleCards(prev => Math.min(prev + 12, contentSkills.length));
+    setVisibleCards((prev) => Math.min(prev + 12, contentSkills.length));
   };
   const filteredSkills = selectedCategory
-    ? contentSkills.filter(skill => skill.category === selectedCategory)
+    ? contentSkills.filter((skill) => skill.category === selectedCategory)
     : contentSkills;
 
   const clearSelection = () => {
@@ -81,7 +81,7 @@ const About = () => {
                 mass: 0.5,
               }}
             >
-              {categories.map(category => {
+              {categories.map((category) => {
                 const isSelected = selectedCategory === category;
 
                 return (
@@ -172,7 +172,7 @@ const About = () => {
                     onClick={clearSelection}
                     className="flex items-center px-4 py-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors duration-200"
                   >
-                    <Icon name="PiX" />
+                    <X />
                     {t("clearSelection")}
                   </button>
                 </motion.div>
@@ -185,45 +185,48 @@ const About = () => {
             animate="show"
             className="grid grid-cols-1 md:grid-cols-2 mt-3 lg:grid-cols-3 gap-4"
           >
-            {filteredSkills.slice(0, visibleCards).map(skill => (
-              <motion.div key={skill.name} variants={item}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex flex-col items-center relative">
-                        <Icon
-                          name={skill.icon}
-                          className="-mb-2 z-10 animate-bounce"
-                          size={28}
-                        />
+            {filteredSkills
+              .slice(0, visibleCards)
+              .map(({ name, icon: Icon, category, proficiency }) => {
+                return (
+                  <motion.div key={name} variants={item}>
+                    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <CardContent className="p-6">
+                        <div className="flex items-center space-x-4">
+                          <div className="flex flex-col items-center relative">
+                            <Icon
+                              className="-mb-2 z-10 animate-bounce"
+                              size={28}
+                            />
 
-                        <div className="w-5 h-3 rounded-[100%] animate-ping delay-500 absolute dark:bg-white/10 bg-black/10 opacity-75 flex bottom-1"></div>
-                        <div className="w-12 h-5 rounded-[100%] bg-muted flex"></div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-lg">{skill.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {skill.category}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-4 relative">
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.proficiency}%` }}
-                          transition={{ duration: 1, delay: 0.5 }}
-                          className="h-full bg-primary rounded-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground mt-2 text-right absolute right-0 bottom-4">
-                        {skill.proficiency}%
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                            <div className="w-5 h-3 rounded-[100%] animate-ping delay-500 absolute dark:bg-white/10 bg-black/10 opacity-75 flex bottom-1"></div>
+                            <div className="w-12 h-5 rounded-[100%] bg-muted flex"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold text-lg">{name}</h3>
+                            <p className="text-sm text-muted-foreground">
+                              {category}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="mt-4 relative">
+                          <div className="h-2 bg-muted rounded-full overflow-hidden">
+                            <motion.div
+                              initial={{ width: 0 }}
+                              animate={{ width: `${proficiency}%` }}
+                              transition={{ duration: 1, delay: 0.5 }}
+                              className="h-full bg-primary rounded-full"
+                            />
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-2 text-right absolute right-0 bottom-4">
+                            {proficiency}%
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
           </motion.div>
 
           {visibleCards < filteredSkills.length && (

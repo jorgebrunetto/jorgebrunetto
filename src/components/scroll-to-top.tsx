@@ -1,7 +1,7 @@
 "use client";
 
+import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Icon } from "./icon";
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +33,7 @@ export const ScrollToTop = () => {
           onClick={scrollToTop}
           className="fixed bottom-7 right-7 cursor-pointer bg-background shadow-lg shadow-neutral-200 dark:shadow-neutral-700 p-2 rounded-full"
         >
-          <Icon name="PiCaretUp" className="animate-pulse" />
+          <ChevronUp className="animate-pulse" />
         </div>
       )}
     </>

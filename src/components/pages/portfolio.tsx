@@ -3,9 +3,9 @@
 import { portfolioItems } from "@/data/portfolio";
 import { PortfolioItem } from "@/lib/types";
 import { motion } from "framer-motion";
+import { ChevronRight, Link, Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import { Icon } from "../icon";
 import { useLanguage } from "../language-provider";
 import { PortfolioModal } from "../portfolio-modal";
 import { TitlePage } from "../title-page";
@@ -22,7 +22,7 @@ const Portfolio = () => {
   const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);
 
   const handleShowMore = () => {
-    setDisplayCount(prev =>
+    setDisplayCount((prev) =>
       Math.min(prev + ITEMS_PER_PAGE, portfolioItems.length)
     );
   };
@@ -57,7 +57,7 @@ const Portfolio = () => {
           animate="show"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {portfolioItems.slice(0, displayCount).map(portfolioItem => (
+          {portfolioItems.slice(0, displayCount).map((portfolioItem) => (
             <motion.div key={portfolioItem.id} variants={item}>
               <Card className="group overflow-hidden">
                 <CardContent className="p-0">
@@ -79,7 +79,7 @@ const Portfolio = () => {
                         }}
                       >
                         {t("portViewDetails")}
-                        <Icon name="PiCaretRight" />
+                        <ChevronRight />
                       </Button>
                       <Button
                         variant="secondary"
@@ -87,7 +87,7 @@ const Portfolio = () => {
                         onClick={() => window.open(portfolioItem.link)}
                       >
                         {t("accessSite")}
-                        <Icon name="PiLinkLight" />
+                        <Link />
                       </Button>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ const Portfolio = () => {
                 <CardContent className="h-full flex items-center justify-center p-6">
                   <div className="text-center">
                     <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                      <Icon name="PiPlus" />
+                      <Plus />
                     </div>
                     <h3 className="font-semibold text-lg">
                       {t("portMoreProjects")}

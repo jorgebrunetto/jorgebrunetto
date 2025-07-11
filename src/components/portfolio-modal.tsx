@@ -9,8 +9,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { PortfolioItem } from "@/lib/types";
+import { Link } from "lucide-react";
 import Image from "next/image";
-import { Icon } from "./icon";
 import { useLanguage } from "./language-provider";
 
 interface PortfolioModalProps {
@@ -80,7 +80,7 @@ export function PortfolioModal({ item, isOpen, onClose }: PortfolioModalProps) {
             size="lg"
             onClick={() => window.open(item.link, "_blank")}
           >
-            <Icon name="PiLinkThin" className="mr-2" />
+            <Link className="mr-2" />
             {t("portViewProjcet")}
           </Button>
         </div>

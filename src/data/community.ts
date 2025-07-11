@@ -4,7 +4,7 @@ export const communityItemItems: CommunityItem[] = [
     {
         id: "0",
         title: "Rocketseat - Papo Tech",
-        description: "Podcast sobre tecnologia, programação e carreira.",
+        description: "Um super papo com a Josi sobre tecnologia, programação e carreira.",
         image: "/images/community/papo-tech-rocketseat-jorgebrunetto.webp",
         link: "https://www.linkedin.com/events/testet-cnicopodeserdecisivonade7246890089610457088/theater/",
         tags: ["podcast", "rocketseat", "papo", "tech", "programming"],
@@ -112,7 +112,7 @@ export const communityItemItems: CommunityItem[] = [
     {
         id: "5",
         title: "Dark Mode Extesion",
-        description: "Extensão de dark mode para VSCode.",
+        description: "Extensão de dark mode para VSCode. Pensando em quem tem fotofobia ou sensibilidade.",
         image: "/images/community/dark-mode.webp",
         link: "https://marketplace.visualstudio.com/items?itemName=DarkModeVS.dark-mode-vs",
         tags: ["vscode", "dark", "mode", "extension", "theme"],
