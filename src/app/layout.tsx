@@ -69,50 +69,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <head>
-        <title>Jorge Brunetto - criação e desenvolvimento</title>
-        <meta
-          name="description"
-          content="Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral."
-        />
-
-        <meta property="og:url" content="https://jorgebrunetto.com.br" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Jorge Brunetto - criação e desenvolvimento"
-        />
-        <meta
-          property="og:description"
-          content="Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral."
-        />
-        <meta
-          property="og:image"
-          content="https://jorgebrunetto.com.br/share-jorgebrunetto.webp"
-        />
-        <meta property="og:image:type" content="image/webp" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="jorgebrunetto.com.br" />
-        <meta property="twitter:url" content="https://jorgebrunetto.com.br" />
-        <meta
-          name="twitter:title"
-          content="Jorge Brunetto - criação e desenvolvimento"
-        />
-        <meta
-          name="twitter:description"
-          content="Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral."
-        />
-        <meta
-          name="twitter:image"
-          content="https://jorgebrunetto.com.br/share-jorgebrunetto.webp"
-        />
-        <meta
-          name="twitter:image:alt"
-          content="Jorge Brunetto - criação e desenvolvimento"
-        />
-      </head>
-
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
