@@ -1,10 +1,10 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Montserrat as FontSans } from "next/font/google";
-
-import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 import { LanguageProvider } from "@/components/language-provider";
 import LanguageToggle from "@/components/language-toggle";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral.",
   keywords:
-    "Jorge Brunetto, Frontend, VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO",
+    "Jorge Brunetto, desenvolvedor frontend, especialista React, especialista Nextjs, React Native expert, Tech Lead Front-end, desenvolvedor TypeScript, frontend freelancer, criação de aplicativos web e mobile, UI UX expert, consultoria front-end, desenvolvedor SPAs, frontend performance, profissional frontend sênior",
   openGraph: {
     title: "Jorge Brunetto - criação e desenvolvimento",
     description:
@@ -87,6 +87,18 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XH15NPKBG0" />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-XH15NPKBG0');
+        `}
+        </Script>
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
