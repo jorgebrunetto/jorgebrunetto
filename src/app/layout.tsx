@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     description:
-      "Site profissional de Jorge Brunetto. Freelancer Frontend, com VueJS, React/Native, Angular, criação de sites, designer ux/ui, mail marketing, SEO para seus sites e sistemas em geral.",
+      "Desenvolvedor sênior especializado em React, Next.js e TypeScript. Criação de aplicações escaláveis, SSR/SSG, API integration e arquitetura front-end moderna.",
     title: "Jorge Brunetto - criação e desenvolvimento",
     creator: "@jorgebrunetto",
     site: "https://jorgebrunetto.com.br",
