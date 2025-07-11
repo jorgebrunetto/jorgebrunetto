@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     countryName: "Brasil",
     images: [
       {
-        url: "https://jorgebrunetto.com.br/share-jorgebrunetto.jpg",
+        url: "https://jorgebrunetto.com.br/share-jorgebrunetto.png",
         width: 200,
         height: 200,
         alt: "Jorge Brunetto - criação e desenvolvimento",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     creator: "@jorgebrunetto",
     site: "https://jorgebrunetto.com.br",
     card: "summary_large_image",
-    images: "https://jorgebrunetto.com.br/share-jorgebrunetto.jpg",
+    images: "https://jorgebrunetto.com.br/share-jorgebrunetto.png",
   },
   robots: "index, follow",
   authors: [{ name: "Jorge Brunetto", url: "https://jorgebrunetto.com.br" }],
@@ -88,7 +88,7 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://jorgebrunetto.com.br/share-jorgebrunetto.jpg"
+          content="https://jorgebrunetto.com.br/share-jorgebrunetto.png"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -104,7 +104,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="https://jorgebrunetto.com.br/share-jorgebrunetto.jpg"
+          content="https://jorgebrunetto.com.br/share-jorgebrunetto.png"
         />
       </head>
 
