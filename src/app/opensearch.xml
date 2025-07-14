@@ -4,9 +4,8 @@
   <ShortName>JorgeBrunetto</ShortName>
   <Description>Busque conteúdos sobre Jorge Brunetto</Description>
   <Tags>tecnologia review reviews analise analises noticia noticias jogo jogos game games software hardware apple windows phone android computador pc tv internet app apps celular smartphone sites perfil criação jorgebrunetto jorge brunetto</Tags>
-  <Url type="text/html" method="get" template="http://www.tecmundo.com.br/busca/?q={searchTerms}&amp;utm_source=opensearch&amp;utm_medium=opensearch" />
   <LongName>Descubra e aprenda tudo sobre tecnologia</LongName>
-  <Image height="16" width="16" type="image/x-icon">http://obj.ibxk.com.br/layout/tecmundo/favicon.ico</Image>
+  <Image height="16" width="16" type="image/svg">https://jorgebrunetto.com.br/icon.svg</Image>
   <Query role="example" searchTerms="Android" />
   <OutputEncoding>UTF-8</OutputEncoding>
   <InputEncoding>UTF-8</InputEncoding>
