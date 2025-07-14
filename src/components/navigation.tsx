@@ -41,7 +41,7 @@ export const Navigation = () => {
           key={name}
           href={href}
           className={cn(
-            "rounded-xl font-semibold flex items-center justify-start p-3 md:p-4 hover:bg-background dark:hover:bg-foreground/10 transition-colors gap-x-4",
+            "rounded-full sm:rounded-xl font-semibold flex items-center justify-start p-3 md:p-4 hover:bg-background dark:hover:bg-foreground/10 transition-colors gap-x-4",
             getMenuItemClass(name)
           )}
           onClick={() => setActiveSection(name)}
