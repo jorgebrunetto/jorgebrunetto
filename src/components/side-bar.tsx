@@ -37,7 +37,7 @@ export const SideBar = () => {
         isVisible ? "translate-y-0" : "translate-y-full"
       )}
     >
-      <section className="rounded-xl lg:flex flex-col bg-foreground/10 dark:bg-black text-black dark:text-gray-100 h-full">
+      <section className="rounded-full sm:rounded-md lg:flex flex-col backdrop-blur-sm bg-background/10 sm:bg-foreground/10 dark:bg-background/50 sm:dark:bg-black text-black dark:text-gray-100 h-full">
         <ContactBar />
         <Navigation />
         <TitleBar />

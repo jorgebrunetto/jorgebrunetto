@@ -11,6 +11,8 @@ import LanguageToggle from "@/components/language-toggle";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SideBar } from "@/components/side-bar";
 import { ModeToggle } from "@/components/toggle-mode";
+import { Toaster } from "@/components/ui/sonner";
+import { WhatsappMsg } from "@/components/whatsapp-msg";
 import Head from "next/head";
 import "./globals.css";
 
@@ -20,7 +22,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Jorge Brunetto || Personal Portfolio",
+  title: "Jorge Brunetto | Personal Portfolio",
   description:
     "Desenvolvedor sênior especializado em React, Next.js e TypeScript. Criação de aplicações escaláveis, SSR/SSG, API integration e arquitetura front-end moderna.",
   keywords:
@@ -111,12 +113,20 @@ export default function RootLayout({
                 <ModeToggle />
                 <LanguageToggle />
                 <ScrollToTop />
+                <WhatsappMsg />
               </section>
 
               <SideBar />
 
               {children}
             </main>
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                duration: 3000,
+                className: "max-w-md",
+              }}
+            />
           </LanguageProvider>
           <Analytics />
           <SpeedInsights />

@@ -19,13 +19,13 @@ const config = {
 		},
 		extend: {
 			animation: {
-				first: "moveVertical 30s ease infinite",
-				second: "moveInCircle 20s reverse infinite",
-				third: "moveInCircle 40s linear infinite",
-				fourth: "moveHorizontal 40s ease infinite",
-				fifth: "moveInCircle 20s ease infinite",
+				first: 'moveVertical 30s ease infinite',
+				second: 'moveInCircle 20s reverse infinite',
+				third: 'moveInCircle 40s linear infinite',
+				fourth: 'moveHorizontal 40s ease infinite',
+				fifth: 'moveInCircle 20s ease infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -77,7 +77,44 @@ const config = {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'facebook': '#3b5999',
+				'messenger': '#0084ff',
+				'twitter': '#55acee',
+				'linkedin': '#0077b5',
+				'skype': '#00aff0',
+				'dropbox': '#007ee5',
+				'wordpress': '#21759b',
+				'vimeo': '#1ab7ea',
+				'slideshare': '#0077b5',
+				'vk': '#4c75a3',
+				'tumblr': '#34465d',
+				'yahoo': '#410093',
+				'google-plus': '#dd4b39',
+				'pinterest': '#bd081c',
+				'youtube': '#cd201f',
+				'stumbleupon': '#eb4924',
+				'reddit': '#ff5700',
+				'quora': '#b92b27',
+				'yelp': '#af0606',
+				'weibo': '#df2029',
+				'producthunt': '#da552f',
+				'hackernews': '#ff6600',
+				'soundcloud': '#ff3300',
+				'blogger': '#f57d00',
+				'whatsapp': '#25d366',
+				'wechat': '#09b83e',
+				'line': '#00c300',
+				'medium': '#02b875',
+				'vine': '#00b489',
+				'slack': '#3aaf85',
+				'instagram': '#e4405f',
+				'dribbble': '#ea4c89',
+				'flickr': '#ff0084',
+				'foursquare': '#f94877',
+				'behance': '#131418',
+				'snapchat': '#fffc00',
+				'figma': '#f24e1e',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -102,39 +139,39 @@ const config = {
 					}
 				},
 				moveHorizontal: {
-					"0%": {
-						transform: "translateX(-50%) translateY(-10%)",
+					'0%': {
+						transform: 'translateX(-50%) translateY(-10%)'
 					},
-					"50%": {
-						transform: "translateX(50%) translateY(10%)",
+					'50%': {
+						transform: 'translateX(50%) translateY(10%)'
 					},
-					"100%": {
-						transform: "translateX(-50%) translateY(-10%)",
-					},
+					'100%': {
+						transform: 'translateX(-50%) translateY(-10%)'
+					}
 				},
 				moveInCircle: {
-					"0%": {
-						transform: "rotate(0deg)",
+					'0%': {
+						transform: 'rotate(0deg)'
 					},
-					"50%": {
-						transform: "rotate(180deg)",
+					'50%': {
+						transform: 'rotate(180deg)'
 					},
-					"100%": {
-						transform: "rotate(360deg)",
-					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
 				},
 				moveVertical: {
-					"0%": {
-						transform: "translateY(-50%)",
+					'0%': {
+						transform: 'translateY(-50%)'
 					},
-					"50%": {
-						transform: "translateY(50%)",
+					'50%': {
+						transform: 'translateY(50%)'
 					},
-					"100%": {
-						transform: "translateY(-50%)",
-					},
-				},
-			},
+					'100%': {
+						transform: 'translateY(-50%)'
+					}
+				}
+			}
 		}
 	},
 	plugins: [require('tailwindcss-animate'), require('tailwindcss-animated')],

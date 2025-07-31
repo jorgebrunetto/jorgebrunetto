@@ -2,7 +2,9 @@
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { PiDownloadSimple } from "react-icons/pi";
 import { AnimatedText } from "../animated-text";
+import { ContactForm } from "../contact-form";
 import { ImageProfile } from "../image-profile";
 import { useLanguage } from "../language-provider";
 import { Particle } from "../particle";
@@ -37,16 +39,6 @@ const Hero = () => {
       <div className="flex gap-2 z-10">
         <Link
           className="hover:animate-jump"
-          href="https://wa.me/5515981376495?text=Conheci%20seu%20trabalho%20no%20site"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Button className="mt-4" variant="download" size="lg">
-            Whatsapp
-          </Button>
-        </Link>
-        <Link
-          className="hover:animate-jump"
           href={
             theme === "light"
               ? "/curriculum-jorgebrunetto-l.pdf"
@@ -56,9 +48,10 @@ const Hero = () => {
           target="_blank"
         >
           <Button className="mt-4" variant="download" size="lg">
-            Download CV
+            <PiDownloadSimple /> Curriculum
           </Button>
         </Link>
+        <ContactForm />
       </div>
     </div>
   );
