@@ -73,10 +73,12 @@ export function ContactForm() {
       .then(() => {
         form.reset();
         setIsLoading(false);
+        setSuccessSend(true);
         toast("Mensagem enviada com sucesso!");
       })
       .catch((error) => {
         setIsLoading(false);
+        setSuccessSend(false);
         toast.error(`Erro ao enviar mensagem: ${error.message}`);
       });
   }
