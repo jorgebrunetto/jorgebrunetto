@@ -66,7 +66,7 @@ export function ContactForm() {
   });
 
   async function onSubmit(formData: SendMailFormValues) {
-    console.log(form.formState.errors);
+    setIsLoading(true);
 
     await sendEmail(formData)
       .then(() => {
