@@ -55,6 +55,7 @@ export type SendMailFormValues = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const [successSend, setSuccessSend] = useState(false);
 
   const form = useForm<SendMailFormValues>({
     resolver: zodResolver(formSchema),
@@ -92,106 +93,126 @@ export function ContactForm() {
           Contato
         </Button>
       </DialogTrigger>
-      <DialogContent>
-        <div className="flex flex-col items-center gap-2">
-          <div
-            className="flex size-11 shrink-0 items-center justify-center rounded-full border"
-            aria-hidden="true"
-          >
-            <PiEnvelopeSimple size={24} />
-          </div>
-          <DialogHeader>
-            <DialogTitle className="sm:text-center">
-              Entre em contato
-            </DialogTitle>
-            <DialogDescription className="sm:text-center">
-              Preencha o formulário abaixo para enviar uma mensagem.
-              Responderemos o mais breve possível.
-            </DialogDescription>
-          </DialogHeader>
-        </div>
-
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="text-left">
-            <div className="space-y-5">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem className="relative">
-                    <FormLabel>Nome completo</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Digite seu nome"
-                        type="text"
-                        {...field}
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage className="absolute -bottom-5" />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="relative">
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="seu@email.com"
-                        type="email"
-                        {...field}
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage className="absolute -bottom-5" />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem className="relative">
-                    <FormLabel>Mensagem</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Digite sua mensagem"
-                        {...field}
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage className="absolute -bottom-5" />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <Button
-              type="submit"
-              className="w-full mt-10"
-              size="lg"
-              disabled={isLoading}
+      {!successSend ? (
+        <DialogContent>
+          <div className="flex flex-col items-center gap-2">
+            <div
+              className="flex size-11 shrink-0 items-center justify-center rounded-full border"
+              aria-hidden="true"
             >
-              {isLoading ? (
-                <>
-                  Enviando mensagem
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                </>
-              ) : (
-                <>
-                  Enviar mensagem
-                  <SendHorizonal className="mr-2 h-4 w-4" />
-                </>
-              )}
-            </Button>
-          </form>
-        </Form>
-      </DialogContent>
+              <PiEnvelopeSimple size={24} />
+            </div>
+            <DialogHeader>
+              <DialogTitle className="sm:text-center">
+                Entre em contato
+              </DialogTitle>
+              <DialogDescription className="sm:text-center">
+                Preencha o formulário abaixo para enviar uma mensagem.
+                Responderemos o mais breve possível.
+              </DialogDescription>
+            </DialogHeader>
+          </div>
+
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="text-left">
+              <div className="space-y-5">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem className="relative">
+                      <FormLabel>Nome completo</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Digite seu nome"
+                          type="text"
+                          {...field}
+                          disabled={isLoading}
+                        />
+                      </FormControl>
+                      <FormMessage className="absolute -bottom-5" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="relative">
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="seu@email.com"
+                          type="email"
+                          {...field}
+                          disabled={isLoading}
+                        />
+                      </FormControl>
+                      <FormMessage className="absolute -bottom-5" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem className="relative">
+                      <FormLabel>Mensagem</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Digite sua mensagem"
+                          {...field}
+                          disabled={isLoading}
+                        />
+                      </FormControl>
+                      <FormMessage className="absolute -bottom-5" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full mt-10"
+                size="lg"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    Enviando mensagem
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Enviar mensagem
+                    <SendHorizonal className="mr-2 h-4 w-4" />
+                  </>
+                )}
+              </Button>
+            </form>
+          </Form>
+        </DialogContent>
+      ) : (
+        <DialogContent>
+          <div className="flex flex-col items-center gap-2">
+            <div
+              className="flex size-11 shrink-0 items-center justify-center rounded-full border"
+              aria-hidden="true"
+            >
+              <PiEnvelopeSimple size={24} />
+            </div>
+            <DialogHeader className="sm:text-center">
+              <DialogTitle className="mb-4">Mensagem enviada!</DialogTitle>
+              <DialogDescription>
+                Sua mensagem foi enviada com sucesso.
+              </DialogDescription>
+              <DialogDescription>Responderemos em breve.</DialogDescription>
+            </DialogHeader>
+          </div>
+        </DialogContent>
+      )}
     </Dialog>
   );
 }

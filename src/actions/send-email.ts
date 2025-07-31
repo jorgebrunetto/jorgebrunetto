@@ -20,7 +20,7 @@ export async function sendEmail(formData: SendMailFormValues) {
         }
 
         await resend.emails.send({
-            from: "Site - Jorge Brunetto <jorgebrunetto@hotmail.com>",
+            from: "Site Jorge Brunetto <onboarding@resend.dev>",
             to: process.env.RESEND_TO_EMAIL_ADDRESS,
             subject: "Novo contato do site",
             text: `
