@@ -16,7 +16,7 @@ export async function sendEmail(formData: SendMailFormValues) {
         }
 
         if (!process.env.RESEND_TO_EMAIL_ADDRESS) {
-            return { error: "Missing environment variable: RESEND_TO_EMAIL_ADDRESS" }
+            return { error: "Missing environment variables: RESEND_TO_EMAIL_ADDRESS" }
         }
 
         await resend.emails.send({
