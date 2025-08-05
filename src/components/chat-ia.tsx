@@ -20,10 +20,9 @@ import { Button } from "./ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "./ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
@@ -181,7 +180,7 @@ export function ChatIaForm() {
           <PiRobot size={30} />
         </div>
       </DialogTrigger>
-      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5">
+      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg">
         <div className="flex flex-col gap-2">
           <DialogHeader className="contents space-y-0 text-left">
             <DialogTitle className="border-b p-4 text-base">
@@ -267,9 +266,9 @@ export function ChatIaForm() {
             </div>
           </div>
         )}
-        <DialogFooter className="border-t px-6 py-4 sm:items-center">
+        <div className="border-t px-6 py-4">
           {isLoading ? (
-            <div className="flex items-center gap-2 mt-auto">
+            <div className="flex gap-2">
               <PiSpinnerGap className="h-4 w-4 animate-spin" />
               <span className="text-gray-500">Jorge IA está pensando...</span>
             </div>
@@ -279,7 +278,6 @@ export function ChatIaForm() {
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="mt-auto"
                   >
                     <div className="space-y-5">
                       <FormField
@@ -331,7 +329,7 @@ export function ChatIaForm() {
               )}
             </>
           )}
-        </DialogFooter>
+        </div>
       </DialogContent>
     </Dialog>
   );
