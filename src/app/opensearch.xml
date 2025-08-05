@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>JorgeBrunetto</ShortName>
+  <Description>Busque conteúdos sobre Jorge Brunetto</Description>
+  <Tags>tecnologia review reviews analise analises noticia noticias jogo jogos game games software hardware apple windows phone android computador pc tv internet app apps celular smartphone sites perfil criação jorgebrunetto jorge brunetto</Tags>
+  <LongName>Descubra e aprenda tudo sobre tecnologia</LongName>
+  <Image height="16" width="16" type="image/svg">https://jorgebrunetto.com.br/icon.svg</Image>
+  <Query role="example" searchTerms="Android" />
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

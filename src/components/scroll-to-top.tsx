@@ -1,0 +1,41 @@
+"use client";
+
+import { ChevronUp } from "lucide-react";
+import { useEffect, useState } from "react";
+
+export const ScrollToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const toggleVisibility = () => {
+        setIsVisible(window.scrollY > 400);
+      };
+
+      window.addEventListener("scroll", toggleVisibility);
+      return () => window.removeEventListener("scroll", toggleVisibility);
+    }
+  }, []);
+
+  return (
+    <>
+      {isVisible && (
+        <div
+          onClick={scrollToTop}
+          className="fixed hidden sm:block sm:bottom-10 right-5 cursor-pointer bg-background shadow-lg shadow-neutral-200 dark:shadow-neutral-700 p-2 rounded-full"
+        >
+          <ChevronUp className="animate-pulse" />
+        </div>
+      )}
+    </>
+  );
+};
