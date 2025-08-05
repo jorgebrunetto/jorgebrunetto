@@ -1,6 +1,8 @@
 "use client";
 import { sendBotMessage } from "@/actions/ia";
+import iconLogo from "@/app/icon.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
@@ -10,6 +12,7 @@ import {
   PiSpinnerGap,
   PiUser,
 } from "react-icons/pi";
+import Markdown from "react-markdown";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Avatar, AvatarFallback } from "./ui/avatar";
@@ -17,6 +20,7 @@ import { Button } from "./ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -63,35 +67,6 @@ function isSameDay(date1: Date, date2: Date) {
     date1.getMonth() === date2.getMonth() &&
     date1.getDate() === date2.getDate()
   );
-}
-
-function chatLengthLimit() {
-  if (typeof window === "undefined") {
-    return false;
-  }
-
-  const storedChat = localStorage.getItem("chat-ia");
-  const chat = storedChat ? JSON.parse(storedChat) : [];
-  return chat.length >= 1;
-}
-
-function checkBlockChat() {
-  if (typeof window === "undefined") {
-    return false;
-  }
-
-  const lastChatDate = localStorage.getItem("chat-ia-timestamp");
-  if (lastChatDate) {
-    const lastDate = new Date(lastChatDate);
-    const currentDate = new Date();
-
-    const diffTime = Math.abs(currentDate.getTime() - lastDate.getTime());
-    const diffHours = diffTime / (1000 * 60 * 60);
-
-    return diffHours < 24;
-  }
-
-  return false;
 }
 
 function getInitialChat(): string[] {
@@ -206,17 +181,17 @@ export function ChatIaForm() {
           <PiRobot size={30} />
         </div>
       </DialogTrigger>
-      <DialogContent className="h-full sm:h-auto flex flex-col">
+      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5">
         <div className="flex flex-col gap-2">
-          <DialogHeader>
-            <DialogTitle>
+          <DialogHeader className="contents space-y-0 text-left">
+            <DialogTitle className="border-b p-4 text-base">
               <div className="flex items-center gap-3">
                 <Avatar className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600">
                   <AvatarFallback className="font-semibold">
                     <PiRobot className="w-5 h-5" />
                   </AvatarFallback>
                 </Avatar>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
                   <h3 className="font-semibold ">Jorge IA</h3>
                   <p className="text-xs text-foreground/60 flex items-center gap-1">
                     <PiCalendarBlank size={18} />
@@ -239,11 +214,11 @@ export function ChatIaForm() {
                 {`${formatDate(data)} - ${formatTime(data)}`}
               </p>
             </div>
-            <div className="h-full max-h-[calc(100vh-224px)] sm:max-h-96 overflow-y-auto border-none sm:border rounded-b-2xl flex flex-col items-start min-h-96 px-0 py-5 sm:p-4 gap-6">
+            <div className="h-full max-h-96 overflow-y-auto border-none sm:border rounded-b-2xl flex flex-col items-start min-h-96 px-0 py-5 sm:p-4 gap-6">
               {chat.map((message, index) => (
                 <div
                   key={message + index}
-                  className={`flex gap-3 w-full ${index % 2 !== 0 ? "flex-row-reverse ml-auto" : "flex-row"}`}
+                  className={`flex gap-3 w-full p-4 ${index % 2 !== 0 ? "flex-row-reverse ml-auto" : "flex-row"}`}
                 >
                   <Avatar className="w-8 h-8 flex-shrink-0">
                     <AvatarFallback
@@ -254,7 +229,12 @@ export function ChatIaForm() {
                       }`}
                     >
                       {index % 2 === 0 ? (
-                        <PiRobot className="w-4 h-4" />
+                        <Image
+                          src={iconLogo}
+                          alt="Jorge Brunetto"
+                          fill
+                          className="rounded-full object-contain"
+                        />
                       ) : (
                         <PiUser className="w-4 h-4" />
                       )}
@@ -268,7 +248,9 @@ export function ChatIaForm() {
                         : "bg-gray-100"
                     }`}
                   >
-                    <div className="text-sm">{message}</div>
+                    <div className="text-sm text-background [&_a]:text-blue-500">
+                      <Markdown>{message}</Markdown>
+                    </div>
                     <div
                       className={`absolute -bottom-5 ${index % 2 === 0 ? "left-3" : "right-3"}`}
                     >
@@ -285,69 +267,71 @@ export function ChatIaForm() {
             </div>
           </div>
         )}
-        {isLoading ? (
-          <div className="flex items-center gap-2 mt-auto">
-            <PiSpinnerGap className="h-4 w-4 animate-spin" />
-            <span className="text-gray-500">Jorge IA está pensando...</span>
-          </div>
-        ) : (
-          <>
-            {!blockChat ? (
-              <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(onSubmit)}
-                  className="mt-auto"
-                >
-                  <div className="space-y-5">
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem className="relative flex rounded-md shadow-xs">
-                          <FormControl>
-                            <Input
-                              placeholder="Faça sua pergunta"
-                              className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
-                              type="text"
-                              autoFocus
-                              {...field}
+        <DialogFooter className="border-t px-6 py-4 sm:items-center">
+          {isLoading ? (
+            <div className="flex items-center gap-2 mt-auto">
+              <PiSpinnerGap className="h-4 w-4 animate-spin" />
+              <span className="text-gray-500">Jorge IA está pensando...</span>
+            </div>
+          ) : (
+            <>
+              {!blockChat ? (
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="mt-auto"
+                  >
+                    <div className="space-y-5">
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem className="relative flex rounded-md shadow-xs">
+                            <FormControl>
+                              <Input
+                                placeholder="Faça sua pergunta"
+                                className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+                                type="text"
+                                autoFocus
+                                {...field}
+                                disabled={isLoading}
+                                onKeyUp={(e) => {
+                                  if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    form.handleSubmit(onSubmit)();
+                                  }
+                                }}
+                              />
+                            </FormControl>
+                            <Button
+                              type="submit"
+                              className="border-input bg-background text-foreground hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center rounded-e-md border px-3 text-sm font-medium transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 rounded-none rounded-r-md shadow-none"
                               disabled={isLoading}
-                              onKeyUp={(e) => {
-                                if (e.key === "Enter") {
-                                  e.preventDefault();
-                                  form.handleSubmit(onSubmit)();
-                                }
-                              }}
-                            />
-                          </FormControl>
-                          <Button
-                            type="submit"
-                            className="border-input bg-background text-foreground hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center rounded-e-md border px-3 text-sm font-medium transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 rounded-none rounded-r-md shadow-none"
-                            disabled={isLoading}
-                          >
-                            {isLoading ? (
-                              <PiSpinnerGap className="h-4 w-4 animate-spin" />
-                            ) : (
-                              <PiPaperPlaneRight className="h-4 w-4" />
-                            )}
-                          </Button>
-                          <FormMessage className="absolute -bottom-5" />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-                </form>
-              </Form>
-            ) : (
-              <div className="text-center text-gray-500 mt-4">
-                <p>
-                  Você atingiu o limite de mensagens por hoje. Por favor,
-                  retorne mais tarde.
-                </p>
-              </div>
-            )}
-          </>
-        )}
+                            >
+                              {isLoading ? (
+                                <PiSpinnerGap className="h-4 w-4 animate-spin" />
+                              ) : (
+                                <PiPaperPlaneRight className="h-4 w-4" />
+                              )}
+                            </Button>
+                            <FormMessage className="absolute -bottom-5" />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                  </form>
+                </Form>
+              ) : (
+                <div className="text-center text-gray-500 mt-4">
+                  <p>
+                    Você atingiu o limite de mensagens por hoje. Por favor,
+                    retorne mais tarde.
+                  </p>
+                </div>
+              )}
+            </>
+          )}
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
