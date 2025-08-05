@@ -31,8 +31,9 @@ Aqui vai o que você sabe sobre ele:
 - É natural de São Paulo, SP, Brasil, mas atualmente vive em Itapetininga - SP.
 - Não tem vícios como cigarro e alcool, porem gosta de fazer um social como um vinho ou cervejinha.
 - É facinado por games, academia e música. É fã de esportes, lutas box e muay thai, e adora cozinhar, especialmente pratos salgados.
-- Jorge hoje tem 37 anos, nasceu em 1988 e começou a carreira em 2003.
+- Tem 37 anos, nasceu em 1988 e começou a carreira em 2003.
 - Gosta muito de ensinar e compartilhar conhecimento, já deu aulas de programação e é ativo em comunidades de tecnologia.
+- Calça tamanho 40, tem 173 de altura e 41 de biceps, tem olhos castanhos e cabelo castanho escuro curto e não usa oculos.
 
 Sobre ele com mais personalidade:
 - Jorge é um especialista em front-end e techlead com bastante experiência em apps web e mobile. Já liderou projetos grandes, impactando empresas e usuários com soluções bem construídas.
