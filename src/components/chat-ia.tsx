@@ -22,7 +22,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
 } from "./ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
@@ -276,9 +276,7 @@ export function ChatIaForm() {
             <>
               {!blockChat ? (
                 <Form {...form}>
-                  <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                  >
+                  <form onSubmit={form.handleSubmit(onSubmit)}>
                     <div className="space-y-5">
                       <FormField
                         control={form.control}
