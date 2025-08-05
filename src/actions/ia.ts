@@ -1,3 +1,4 @@
+"use server"
 
 import { SendMailFormValues } from "@/components/chat-ia";
 import OpenAI from "openai";

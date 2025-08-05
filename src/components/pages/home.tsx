@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { PiDownloadSimple } from "react-icons/pi";
 import { AnimatedText } from "../animated-text";
+import { ChatIaForm } from "../chat-ia";
 import { ContactForm } from "../contact-form";
 import { ImageProfile } from "../image-profile";
 import { useLanguage } from "../language-provider";
@@ -52,7 +53,7 @@ const Hero = () => {
           </Button>
         </Link>
         <ContactForm />
-        {/* <ChatIaForm /> */}
+        <ChatIaForm />
       </div>
     </div>
   );
