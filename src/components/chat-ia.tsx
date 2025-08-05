@@ -13,7 +13,6 @@ import {
 import Markdown from "react-markdown";
 import { toast } from "sonner";
 import { z } from "zod";
-import { BackgroundChat } from "./animation-background";
 import { LoaderIA } from "./animation-ia";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Button } from "./ui/button";
@@ -202,7 +201,7 @@ export function ChatIaForm() {
 
         {chat.length > 0 && (
           <div className="relative overflow-hidden">
-            <BackgroundChat />
+          {/*  <BackgroundChat /> */}
 
             <div className="px-4 py-2 bg-foreground/10 w-full z-10 relative">
               <p className="text-xs text-foreground/55 text-center">
