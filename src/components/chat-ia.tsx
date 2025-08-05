@@ -1,8 +1,6 @@
 "use client";
 import { sendBotMessage } from "@/actions/ia";
-import iconLogo from "@/app/icon.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
@@ -15,6 +13,8 @@ import {
 import Markdown from "react-markdown";
 import { toast } from "sonner";
 import { z } from "zod";
+import { BackgroundChat } from "./animation-background";
+import { LoaderIA } from "./animation-ia";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Button } from "./ui/button";
 import {
@@ -186,9 +186,7 @@ export function ChatIaForm() {
             <DialogTitle className="border-b p-4 text-base">
               <div className="flex items-center gap-3">
                 <Avatar className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600">
-                  <AvatarFallback className="font-semibold">
-                    <PiRobot className="w-5 h-5" />
-                  </AvatarFallback>
+                  <LoaderIA />
                 </Avatar>
                 <div className="flex flex-col">
                   <h3 className="font-semibold ">Jorge IA</h3>
@@ -203,9 +201,10 @@ export function ChatIaForm() {
         </div>
 
         {chat.length > 0 && (
-          <div>
-            {/* Conversation Started */}
-            <div className="px-4 py-2 bg-foreground/10 w-full">
+          <div className="relative overflow-hidden">
+            <BackgroundChat />
+
+            <div className="px-4 py-2 bg-foreground/10 w-full z-10 relative">
               <p className="text-xs text-foreground/55 text-center">
                 Conversa iniciada
               </p>
@@ -213,11 +212,12 @@ export function ChatIaForm() {
                 {`${formatDate(data)} - ${formatTime(data)}`}
               </p>
             </div>
-            <div className="h-full max-h-96 overflow-y-auto border-none sm:border rounded-b-2xl flex flex-col items-start min-h-96 px-0 py-5 sm:p-4 gap-6">
+
+            <div className="h-full max-h-96 overflow-y-auto border-none sm:border flex flex-col items-start min-h-96 px-0 py-5 sm:p-4 gap-6">
               {chat.map((message, index) => (
                 <div
                   key={message + index}
-                  className={`flex gap-3 w-full p-4 ${index % 2 !== 0 ? "flex-row-reverse ml-auto" : "flex-row"}`}
+                  className={`flex z-10 gap-3 w-full p-4 ${index % 2 !== 0 ? "flex-row-reverse ml-auto" : "flex-row"}`}
                 >
                   <Avatar className="w-8 h-8 flex-shrink-0">
                     <AvatarFallback
@@ -228,12 +228,7 @@ export function ChatIaForm() {
                       }`}
                     >
                       {index % 2 === 0 ? (
-                        <Image
-                          src={iconLogo}
-                          alt="Jorge Brunetto"
-                          fill
-                          className="rounded-full object-contain"
-                        />
+                        <LoaderIA />
                       ) : (
                         <PiUser className="w-4 h-4" />
                       )}
@@ -247,7 +242,7 @@ export function ChatIaForm() {
                         : "bg-gray-100"
                     }`}
                   >
-                    <div className="text-sm text-background [&_a]:text-blue-500">
+                    <div className="text-sm text-black [&_a]:text-blue-500">
                       <Markdown>{message}</Markdown>
                     </div>
                     <div
@@ -310,7 +305,7 @@ export function ChatIaForm() {
                                 <PiPaperPlaneRight className="h-4 w-4" />
                               )}
                             </Button>
-                            <FormMessage className="absolute -bottom-5" />
+                            <FormMessage className="absolute -bottom-4 text-xs" />
                           </FormItem>
                         )}
                       />

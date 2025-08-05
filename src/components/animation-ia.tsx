@@ -1,18 +1,13 @@
 "use client";
+import { useEffect, useState } from "react";
+import AnimationIA from "./animation-ia.json";
 
-import { useLottie } from "lottie-react";
-import * as animationData from "./animation-ia.json";
-export const AnimationIa = () => {
-  const defaultOptions = {
-    animationData: animationData,
-    loop: true,
-  };
+export const LoaderIA = () => {
+  const [Lottie, setLottie] = useState<any>(null);
 
-  const { View } = useLottie(defaultOptions);
+  useEffect(() => {
+    import("lottie-react").then((mod) => setLottie(() => mod.default));
+  }, []);
 
-  return (
-    <div className="">
-      <div className="w-full">{View}</div>
-    </div>
-  );
+  return <>{Lottie && <Lottie animationData={AnimationIA} loop={true} />}</>;
 };
