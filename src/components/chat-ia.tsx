@@ -30,29 +30,114 @@ const formSchema = z.object({
   }),
 });
 
-export type SendMailFormValues = z.infer<typeof formSchema>;
+const LOCAL_STORAGE_KEYS = {
+  CHAT: "chat-ia",
+  TIMESTAMP: "chat-ia-timestamp",
+};
 
-const formatTime = (date: Date) => {
+const MAX_MESSAGES_PER_DAY = 30;
+
+const isClient = () => typeof window !== "undefined";
+
+function formatTime(date: Date) {
   return date.toLocaleTimeString("pt-BR", {
     hour: "2-digit",
     minute: "2-digit",
   });
-};
+}
 
-const formatDate = (date: Date) => {
+export type SendMailFormValues = z.infer<typeof formSchema>;
+
+function formatDate(date: Date) {
   return date.toLocaleDateString("pt-BR", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   });
-};
+}
+
+function isSameDay(date1: Date, date2: Date) {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+}
+
+function chatLengthLimit() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const storedChat = localStorage.getItem("chat-ia");
+  const chat = storedChat ? JSON.parse(storedChat) : [];
+  return chat.length >= 1;
+}
+
+function checkBlockChat() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const lastChatDate = localStorage.getItem("chat-ia-timestamp");
+  if (lastChatDate) {
+    const lastDate = new Date(lastChatDate);
+    const currentDate = new Date();
+
+    const diffTime = Math.abs(currentDate.getTime() - lastDate.getTime());
+    const diffHours = diffTime / (1000 * 60 * 60);
+
+    return diffHours < 24;
+  }
+
+  return false;
+}
+
+function getInitialChat(): string[] {
+  if (!isClient()) return [];
+  const stored = localStorage.getItem(LOCAL_STORAGE_KEYS.CHAT);
+  return stored
+    ? JSON.parse(stored)
+    : ["Olá! Sou Jorge IA, o que quer saber sobre mim?"];
+}
+
+function getStoredMessages(): string[] {
+  if (!isClient()) return [];
+  const stored = localStorage.getItem(LOCAL_STORAGE_KEYS.CHAT);
+  return stored ? JSON.parse(stored) : [];
+}
+
+function storeMessages(messages: string[]) {
+  localStorage.setItem(LOCAL_STORAGE_KEYS.CHAT, JSON.stringify(messages));
+}
+
+function clearChatIfNewDay() {
+  if (!isClient()) return;
+
+  const lastTimestamp = localStorage.getItem(LOCAL_STORAGE_KEYS.TIMESTAMP);
+  const now = new Date();
+
+  if (lastTimestamp) {
+    const lastDate = new Date(lastTimestamp);
+    if (!isSameDay(now, lastDate)) {
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.CHAT);
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.TIMESTAMP);
+    }
+  }
+}
+
+function isMessageLimitReached(): boolean {
+  if (!isClient()) return false;
+
+  const messages = getStoredMessages();
+  return messages.length >= MAX_MESSAGES_PER_DAY;
+}
 
 export function ChatIaForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [chat, setChat] = useState<string[]>([
-    "Olá! Sou Jorge IA, o que quer saber sobre mim?",
-  ]);
+  const [chat, setChat] = useState<string[]>([]);
+  const [blockChat, setBlockChat] = useState(false);
 
   const data = new Date();
   const chatActual = useRef<HTMLDivElement>(null);
@@ -65,17 +150,34 @@ export function ChatIaForm() {
   });
 
   async function onSubmit(formData: SendMailFormValues) {
-    setIsLoading(true);
-    const responseIA = await sendBotMessage(formData);
+    if (isMessageLimitReached()) {
+      setBlockChat(true);
+      localStorage.setItem(
+        LOCAL_STORAGE_KEYS.TIMESTAMP,
+        new Date().toISOString()
+      );
+      return;
+    }
 
+    setIsLoading(true);
+
+    const responseIA = await sendBotMessage(formData);
     if (responseIA !== null) {
-      setChat((prev) => [...prev, formData.message, responseIA]);
+      const updatedChat = [...chat, formData.message, responseIA];
+
+      setChat(updatedChat);
+      storeMessages(updatedChat);
+      localStorage.setItem(
+        LOCAL_STORAGE_KEYS.TIMESTAMP,
+        new Date().toISOString()
+      );
+
       form.reset();
-      setIsLoading(false);
     } else {
       toast.error("Erro ao enviar mensagem. Tente novamente.");
-      setIsLoading(false);
     }
+
+    setIsLoading(false);
   }
 
   const scrollToBottom = () => {
@@ -85,6 +187,17 @@ export function ChatIaForm() {
   useEffect(() => {
     scrollToBottom();
   }, [chat]);
+
+  useEffect(() => {
+    clearChatIfNewDay();
+
+    const initialChat = getInitialChat();
+    setChat(initialChat);
+
+    if (isMessageLimitReached()) {
+      setBlockChat(true);
+    }
+  }, []);
 
   return (
     <Dialog>
@@ -172,54 +285,68 @@ export function ChatIaForm() {
             </div>
           </div>
         )}
-        {!isLoading ? (
+        {isLoading ? (
           <div className="flex items-center gap-2 mt-auto">
             <PiSpinnerGap className="h-4 w-4 animate-spin" />
             <span className="text-gray-500">Jorge IA está pensando...</span>
           </div>
         ) : (
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="mt-auto">
-              <div className="space-y-5">
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem className="relative flex rounded-md shadow-xs">
-                      <FormControl>
-                        <Input
-                          placeholder="Faça sua pergunta"
-                          className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
-                          type="text"
-                          autoFocus
-                          {...field}
-                          disabled={isLoading}
-                          onKeyUp={(e) => {
-                            if (e.key === "Enter") {
-                              e.preventDefault();
-                              form.handleSubmit(onSubmit)();
-                            }
-                          }}
-                        />
-                      </FormControl>
-                      <Button
-                        type="submit"
-                        className="border-input bg-background text-foreground hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center rounded-e-md border px-3 text-sm font-medium transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 rounded-none rounded-r-md shadow-none"
-                        disabled={isLoading}
-                      >
-                        {isLoading ? (
-                          <PiSpinnerGap className="h-4 w-4 animate-spin" />
-                        ) : (
-                          <PiPaperPlaneRight className="h-4 w-4" />
-                        )}
-                      </Button>
-                      <FormMessage className="absolute -bottom-5" />
-                    </FormItem>
-                  )}
-                />
+          <>
+            {!blockChat ? (
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="mt-auto"
+                >
+                  <div className="space-y-5">
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem className="relative flex rounded-md shadow-xs">
+                          <FormControl>
+                            <Input
+                              placeholder="Faça sua pergunta"
+                              className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+                              type="text"
+                              autoFocus
+                              {...field}
+                              disabled={isLoading}
+                              onKeyUp={(e) => {
+                                if (e.key === "Enter") {
+                                  e.preventDefault();
+                                  form.handleSubmit(onSubmit)();
+                                }
+                              }}
+                            />
+                          </FormControl>
+                          <Button
+                            type="submit"
+                            className="border-input bg-background text-foreground hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center rounded-e-md border px-3 text-sm font-medium transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 rounded-none rounded-r-md shadow-none"
+                            disabled={isLoading}
+                          >
+                            {isLoading ? (
+                              <PiSpinnerGap className="h-4 w-4 animate-spin" />
+                            ) : (
+                              <PiPaperPlaneRight className="h-4 w-4" />
+                            )}
+                          </Button>
+                          <FormMessage className="absolute -bottom-5" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </form>
+              </Form>
+            ) : (
+              <div className="text-center text-gray-500 mt-4">
+                <p>
+                  Você atingiu o limite de mensagens por hoje. Por favor,
+                  retorne mais tarde.
+                </p>
               </div>
-            </form>
-          </Form>
+            )}
+          </>
         )}
       </DialogContent>
     </Dialog>
