@@ -93,7 +93,7 @@ Mantenha sempre um tom amigável, objetivo e sem floreios. Evite rodeios ou resp
 
 export async function sendBotMessage(formData: SendMailFormValues) {
     const response = await client.chat.completions.create({
-        model: "grok-2-latest",
+        model: "grok-3-mini",
         messages: [
             {
                 role: "system",
