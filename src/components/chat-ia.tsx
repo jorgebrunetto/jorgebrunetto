@@ -158,7 +158,13 @@ export function ChatIaForm() {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    const scrollTimeout = setTimeout(() => {
+      requestAnimationFrame(() => {
+        scrollToBottom();
+      });
+    }, 50);
+
+    return () => clearTimeout(scrollTimeout);
   }, [chat]);
 
   useEffect(() => {
@@ -173,7 +179,13 @@ export function ChatIaForm() {
   }, []);
 
   return (
-    <Dialog modal>
+    <Dialog
+      onOpenChange={(open) => {
+        if (open) {
+          setTimeout(() => scrollToBottom(), 50);
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <div className="hover:animate-jump fixed bottom-40 right-4 cursor-pointer bg-background shadow-lg shadow-neutral-200 dark:shadow-neutral-700 rounded-full text-producthunt">
           <Avatar className="w-12 h-12">
@@ -256,7 +268,7 @@ export function ChatIaForm() {
                   </div>
                 </div>
               ))}
-              <div ref={chatActual} />
+
               {isLoading && (
                 <div className="flex z-10 gap-3 w-full p-4 flex-row">
                   <Avatar className="w-8 h-8 flex-shrink-0">
@@ -280,6 +292,7 @@ export function ChatIaForm() {
                   </div>
                 </div>
               )}
+              <div ref={chatActual} />
             </div>
           </div>
         )}
