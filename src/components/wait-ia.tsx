@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import AnimationIA from "./process-ia.json";
+import AnimationIA from "./loading-1.json";
 
-export const LoaderIA = () => {
+export const WaitIA = () => {
   const [Lottie, setLottie] = useState<any>(null);
 
   useEffect(() => {

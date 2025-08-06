@@ -10,7 +10,7 @@ export const BackgroundChat = () => {
   }, []);
 
   return (
-    <div className="absolute bottom-56 left-0 w-full h-full">
+    <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none">
       {Lottie && <Lottie animationData={AnimationBG} loop={true} />}
     </div>
   );

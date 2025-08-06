@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import {
   PiCalendarBlank,
   PiPaperPlaneRight,
-  PiRobot,
   PiSpinnerGap,
   PiUser,
 } from "react-icons/pi";
@@ -132,6 +131,7 @@ export function ChatIaForm() {
       return;
     }
 
+    setChat((prevChat) => [...prevChat, formData.message]);
     setIsLoading(true);
 
     const responseIA = await sendBotMessage(formData);
@@ -173,18 +173,20 @@ export function ChatIaForm() {
   }, []);
 
   return (
-    <Dialog>
+    <Dialog modal>
       <DialogTrigger asChild>
-        <div className="hover:animate-jump fixed bottom-40 right-4 cursor-pointer bg-background shadow-lg shadow-neutral-200 dark:shadow-neutral-700 p-2 rounded-full text-producthunt">
-          <PiRobot size={30} />
+        <div className="hover:animate-jump fixed bottom-40 right-4 cursor-pointer bg-background shadow-lg shadow-neutral-200 dark:shadow-neutral-700 rounded-full text-producthunt">
+          <Avatar className="w-12 h-12">
+            <LoaderIA />
+          </Avatar>
         </div>
       </DialogTrigger>
-      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg">
+      <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg h-full sm:h-auto">
         <div className="flex flex-col gap-2">
           <DialogHeader className="contents space-y-0 text-left">
             <DialogTitle className="border-b p-4 text-base">
               <div className="flex items-center gap-3">
-                <Avatar className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600">
+                <Avatar className="w-10 h-10">
                   <LoaderIA />
                 </Avatar>
                 <div className="flex flex-col">
@@ -201,8 +203,6 @@ export function ChatIaForm() {
 
         {chat.length > 0 && (
           <div className="relative overflow-hidden">
-          {/*  <BackgroundChat /> */}
-
             <div className="px-4 py-2 bg-foreground/10 w-full z-10 relative">
               <p className="text-xs text-foreground/55 text-center">
                 Conversa iniciada
@@ -212,7 +212,7 @@ export function ChatIaForm() {
               </p>
             </div>
 
-            <div className="h-full max-h-96 overflow-y-auto border-none sm:border flex flex-col items-start min-h-96 px-0 py-5 sm:p-4 gap-6">
+            <div className="h-full pb-8 overflow-y-auto border-none sm:border flex flex-col items-start sm:max-h-96 px-0 py-5 sm:p-4 gap-6">
               {chat.map((message, index) => (
                 <div
                   key={message + index}
@@ -222,7 +222,7 @@ export function ChatIaForm() {
                     <AvatarFallback
                       className={`text-xs ${
                         index % 2 === 0
-                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                          ? "text-white"
                           : "bg-gray-200 text-gray-700"
                       }`}
                     >
@@ -235,7 +235,7 @@ export function ChatIaForm() {
                   </Avatar>
                   <div
                     key={index}
-                    className={`px-4 py-2 rounded-2xl max-w-[70%] relative ${
+                    className={`px-4 py-2 rounded-2xl max-w-[80%] relative ${
                       index % 2 === 0
                         ? "bg-gradient-to-r from-blue-100 to-purple-100 text-gray-800"
                         : "bg-gray-100"
@@ -257,13 +257,38 @@ export function ChatIaForm() {
                 </div>
               ))}
               <div ref={chatActual} />
+              {isLoading && (
+                <div className="flex z-10 gap-3 w-full p-4 flex-row">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="text-xs text-white">
+                      <LoaderIA />
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex space-x-2 justify-center items-center h-9 px-4 rounded-2xl max-w-[80%] relative bg-gradient-to-r from-blue-100 to-purple-100 text-gray-800">
+                    {[0, 1, 2].map((i) => (
+                      <div
+                        key={i}
+                        className={`h-1 w-1 bg-blue-500 rounded-full animate-ping ${
+                          i === 0
+                            ? "[animation-delay:-0.3s]"
+                            : i === 1
+                              ? "[animation-delay:-0.15s]"
+                              : ""
+                        }`}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
         <div className="border-t px-6 py-4">
           {isLoading ? (
             <div className="flex gap-2">
-              <PiSpinnerGap className="h-4 w-4 animate-spin" />
+              <Avatar className="w-6 h-6">
+                <LoaderIA />
+              </Avatar>
               <span className="text-gray-500">Jorge IA está pensando...</span>
             </div>
           ) : (
@@ -277,13 +302,15 @@ export function ChatIaForm() {
                         name="message"
                         render={({ field }) => (
                           <FormItem className="relative flex rounded-md shadow-xs">
-                            <FormControl>
+                            <FormControl autoFocus={false}>
                               <Input
                                 placeholder="Faça sua pergunta"
                                 className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
                                 type="text"
-                                autoFocus
                                 {...field}
+                                autoComplete="off"
+                                autoCorrect="off"
+                                autoFocus={false}
                                 disabled={isLoading}
                                 onKeyUp={(e) => {
                                   if (e.key === "Enter") {
