@@ -205,7 +205,7 @@ export function ChatIaForm() {
           <div className="relative overflow-hidden">
             <div className="px-4 py-2 bg-foreground/10 w-full z-10 relative">
               <p className="text-xs text-foreground/55 text-center">
-                Conversa iniciada
+                Conversa iniciada:
               </p>
               <p className="text-xs text-foreground/70 text-center">
                 {`${formatDate(data)} - ${formatTime(data)}`}
